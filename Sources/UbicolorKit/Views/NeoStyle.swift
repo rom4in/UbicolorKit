@@ -46,7 +46,7 @@ public struct NeoModifier : ViewModifier {
 }
 
 
-public enum ButtonEdgesStyle { case sharp, soft, bezel, round }
+public enum ButtonEdgesStyle { case sharp, soft }
 
 public struct NeoStyle: ButtonStyle {
 	
@@ -67,6 +67,7 @@ public struct NeoStyle: ButtonStyle {
 		configuration
 			.label
 			.foregroundColor(isSelected ? .white : .label) //configuration.isPressed ? Color.black.opacity(0.2) : isSelected ? .white : color)
+            .blendMode(.difference)
 			.padding(.horizontal , 32)
 			.padding(.vertical , 16)
 			.background(Group { Color(isSelected ? color : .main) }
