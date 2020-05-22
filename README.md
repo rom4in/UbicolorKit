@@ -1,24 +1,45 @@
-<h3 align="center">
-<img src="Sources/UbicolorKit/colorKit_banner.png">
-</h3>
 
 # UbicolorKit
+
+<h3 align="center">
+<img src="Sources/UbicolorKit/UbicolorKit_banner.png">
+</h3>
 
 
 This is a SwiftUI components library. it includes useful Views and extensions.
 
-# ColorPicker : View
 
-ColorPicker(color : <Binding>UIColor)
+## SwiftUI Views
 
-# Color extensions
+`ColorPicker(color : $UIColor)`
+
+`ColorSwitch(isOn : $Bool)`
+
+`FlatSlider(progress : Float )`
+
+`ImagePicker(selectedImage: $UIImage)`
+
+`TimeStepper(time: Double)`
+
+`SkeuoSlider(progress: Float)`
+
+## SwiftUI Button Style
+
+`NeoStyle(selected: $Bool, color: $UIColor, style : $ButtonEdgesStyle)`
+
+`enum ButtonEdgesStyle 
+    case sharp
+    case soft`
+
+
+## Color extensions
 
 `Color.label`
 
 `Color.secondaryBackground`
 
 
-# UIColor extensions
+## UIColor extensions
 
 `func image(size: CGSize = CGSize(width: 4, height: 4)) -> UIImage`
 
@@ -32,13 +53,13 @@ HEX color without  # example :  "3349EE"
 `var hsba : (h: CGFloat, s: CGFloat,b: CGFloat,a: CGFloat)`
 
 
-# Gradient extensions
+## Gradient extensions
 
 Get a gradient of Hues from 0 to 360
 `Gradient.spectrum : Gradient` 
 
 
-# UIImage extensions
+## UIImage extensions
 
 because sometimes it has a weird orientation...
 `func fixOrientation() -> UIImage`
@@ -50,11 +71,17 @@ because sometimes it has a weird orientation...
 `var averageColor: UIColor?`
 
 
-includes Image Colors from  https://github.com/jathu/UIImageColors//
-`UIImageColor(background: UIColor, primary: UIColor, secondary: UIColor, detail: UIColor)`
 
-# UIView extensions
+## UIView extensions
 
 `func renderedImage() -> UIImage`
 
 `func getColor(at point : CGPoint)  -> UIColor?`
+
+
+
+
+#### includes Image Colors from  https://github.com/jathu/UIImageColors//
+
+`UIImageColor(background: UIColor, primary: UIColor, secondary: UIColor, detail: UIColor)`
+
