@@ -2,7 +2,7 @@
 # UbicolorKit
 
 <h3 align="center">
-<img src="Sources/UbicolorKit/ubicolorkit_repo_banner.png">
+<img src="Sources/UbicolorKit/ubicolorkit.png">
 </h3>
 
 
