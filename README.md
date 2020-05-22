@@ -2,7 +2,7 @@
 # UbicolorKit
 
 <h3 align="center">
-<img src="Sources/UbicolorKit/UbicolorKitBanner.png">
+<img src="Sources/UbicolorKit/ubicolorkit_repo_banner.png">
 </h3>
 
 
@@ -30,21 +30,50 @@ This is a SwiftUI components library. it includes useful Views and extensions.
 `enum ButtonEdgesStyle 
     case sharp
     case soft`
+    
+    
+
+# Extensions
+
+## View
+
+`shadow()`
+
+`doubleShdow()`
+
+`smoothCorners(_ radius: CGFloat = 20))`
+
+`card()`
+
+`lookNice()`
+
+`neo()`
+
+`if(Bool)` //conditional modifier
+
+`maskContent<T: View>(using: T) -> some View` //mask View with another View
 
 
-## Color extensions
+## Color
 
 `Color.label`
 
 `Color.secondaryBackground`
 
+## Gradient
 
-## UIColor extensions
+Get a gradient of Hues from 0 to 360
+
+`Gradient.spectrum : Gradient` 
+
+
+## UIColor
+
+Render color as Image
 
 `func image(size: CGSize = CGSize(width: 4, height: 4)) -> UIImage`
 
-HEX color without  # example :  "3349EE"
-`func getHex() -> String` 
+Get color information in any format
 
 `var rgba -> (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat)`
 
@@ -52,27 +81,29 @@ HEX color without  # example :  "3349EE"
 
 `var hsba : (h: CGFloat, s: CGFloat,b: CGFloat,a: CGFloat)`
 
+UIColor to HEX as String. Example "FFFFFF"
 
-## Gradient extensions
+`func getHex() -> String` 
 
-Get a gradient of Hues from 0 to 360
-`Gradient.spectrum : Gradient` 
+HEX to UIColor
 
-
-## UIImage extensions
-
-because sometimes it has a weird orientation...
-`func fixOrientation() -> UIImage`
+`static func` fromHex (hex:String) -> UIColor`
 
 
-`func scaled(by scale: CGFloat) -> UIImage?` {`
 
+## UIImage
+
+...because sometimes it has a weird orientation...
 
 `var averageColor: UIColor?`
 
+`func scaled(by scale: CGFloat) -> UIImage?`
+
+`func fixOrientation() -> UIImage`
 
 
-## UIView extensions
+
+## UIView
 
 `func renderedImage() -> UIImage`
 
@@ -80,8 +111,9 @@ because sometimes it has a weird orientation...
 
 
 
+# UIImageColors
 
-#### includes Image Colors from  https://github.com/jathu/UIImageColors//
+Includes Image Colors from  https://github.com/jathu/UIImageColors
 
 `UIImageColor(background: UIColor, primary: UIColor, secondary: UIColor, detail: UIColor)`
 
