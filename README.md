@@ -1,3 +1,7 @@
+<h3 align="center">
+<img src="Sources/UbicolorKit/colorKit_banner.png" width="500">
+</h3>
+
 # UbicolorKit
 
 
