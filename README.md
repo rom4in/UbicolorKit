@@ -1,5 +1,5 @@
 <h3 align="center">
-<img src="Sources/UbicolorKit/colorKit_banner.png" width="500">
+<img src="Sources/UbicolorKit/colorKit_banner.png">
 </h3>
 
 # UbicolorKit
