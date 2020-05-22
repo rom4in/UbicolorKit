@@ -8,33 +8,23 @@ import SwiftUI
 
 public extension View {
 	
-	func `if`<T: View>(_ conditional: Bool, transform: (Self) -> T) -> some View {
-		Group {
-			if conditional {
-				transform(self)
-			} else {
-				self
-			}
-		}
-	}
-	
-	func maskContent<T: View>(using: T) -> some View {
-		using.mask(self)
-	}
+    func shadow() -> some View {
+        
+        return self.shadow(color: Color.black.opacity(0.2), radius : 20)
+    }
 	
     func doubleShadow(color: Color = Color.black, pressed: Bool = false) -> some View {
+        
         self.modifier(DoubleShadow(color: color, pressed: pressed))
     }
 	
-	func smoothCorners(_ radius: CGFloat = 20.0) -> some View {
+	func smoothCorners(_ radius: CGFloat = 20) -> some View {
+        
 		self.modifier(CornerModifier(radius: radius))
 	}
-	
-	func shadow() -> some View {
-		return self.shadow(color: Color.black.opacity(0.2), radius : 20)
-	}
-	
+		
 	func card() -> some View {
+        
 		return self.modifier(CardModifier())
 	}
 	
@@ -42,7 +32,7 @@ public extension View {
 		
 		return self
 				.padding()
-			.background(Color(.secondarySystemBackground).opacity(opacity))
+                .background(Color(.secondarySystemBackground).opacity(opacity))
 				.smoothCorners(cornerRadius)
 				.if(doubleShadow) { view in
 					view.doubleShadow()
@@ -53,17 +43,38 @@ public extension View {
 		}
 
 	func neoShadow(pressed: Binding<Bool>) -> some View {
+        
 		   self.modifier(NeoShadow(pressed: pressed))
 	   }
 	
 	func neoHighlight(pressed: Binding<Bool>) -> some View {
+        
 		self.modifier(NeoHighlight(pressed: pressed))
 	}
 	
 	func neo(style: ButtonEdgesStyle = .soft, pressed: Bool = false) -> some View {
+        
 		self.modifier(NeoModifier(style: style, pressed: pressed ))
 	}
 	
+    func `if`<T: View>(_ conditional: Bool, transform: (Self) -> T) -> some View {
+        
+        Group {
+            
+            if conditional {
+                
+                transform(self)
+                
+            } else {
+                
+                self
+            }
+        }
+    }
+    
+    func maskContent<T: View>(using: T) -> some View {
+        using.mask(self)
+    }
 	
 }
 
@@ -72,7 +83,9 @@ public struct DoubleShadow: ViewModifier {
 	@Environment(\.colorScheme) var colorScheme: ColorScheme
 
 	var color : Color
+    
 	var pressed : Bool = false
+    
 	public func body(content : Content) -> some View {
 		content
 			.shadow(color: color.opacity( 0.2), radius: pressed ? 6 : 20, x: 0, y: pressed ? 6 : 20)
